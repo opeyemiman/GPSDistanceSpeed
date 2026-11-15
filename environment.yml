@@ -19,3 +19,4 @@ dependencies:
       - pye57
       - trimesh
       - ipyfilechooser
+      - pyproj
