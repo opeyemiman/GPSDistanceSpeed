@@ -9,15 +9,13 @@
 
 ## GPSDISTANCESPEED
 GPS Distance and Speed Calculator Help
-1. Purpose
-This calculator reads consecutive GPS observations containing latitude, longitude, and numeric timestamps. For each pair of consecutive points, the calculator determines distance, elapsed time, and interval speed.
 
-Read two consecutive GPS coordinates.
-Calculate the distance between the coordinates.
-Subtract the timestamps to obtain elapsed time.
-Divide segment distance by elapsed time.
-Add the segment distance to cumulative distance.
-2. CSV input options
+### Purpose
+This calculator reads consecutive GPS observations containing latitude, longitude, and numeric timestamps. 
+For each pair of consecutive points, the calculator determines distance, elapsed time, and interval speed.
+
+
+### CSV inputs
 The calculator supports three input workflows:
 
 Upload CSV: Select a CSV file from the computer. The entire file is copied into the editable text area.
@@ -25,12 +23,11 @@ Paste manually: Paste CSV text directly into the text area.
 Load example: Load the built-in example CSV.
 Because uploaded data is copied into the text area, the data can be reviewed or edited before processing.
 
-3. Required CSV columns
+### CSV columns
 The CSV must include at least:
 
-A latitude column in decimal degrees.
-A longitude column in decimal degrees.
-A numeric timestamp column.
+A latitude column in decimal degrees; A longitude column in decimal degrees; A numeric timestamp column.
+
 Example:
 
 time,lat,lon
@@ -39,16 +36,16 @@ time,lat,lon
 2,40.0011,-105.0007
 3,40.0016,-105.0010
     
-Timestamp differences are assumed to be seconds. Timestamps must increase from one data row to the next.
+Timestamp differences are assumed to be seconds. Timestamps must increase from one data row to the next. 
 
-4. Latitude and longitude
+### Latitude and longitude
 Latitude indicates north-south angular position. Valid decimal latitude values range from -90 to +90 degrees.
 
 Longitude indicates east-west angular position. Valid decimal longitude values range from -180 to +180 degrees.
 
 Latitude and longitude are angular coordinates, not direct linear distances. One degree of longitude represents less ground distance as a location approaches either pole.
 
-5. WGS84 ellipsoidal geodesic
+### WGS84 ellipsoidal geodesic
 WGS84 means World Geodetic System 1984. WGS84 is the reference coordinate system commonly used by GPS.
 
 WGS84 approximates Earth as a flattened ellipsoid. Earth is slightly wider around the equator than the distance between the geographic poles.
@@ -71,7 +68,8 @@ Accounts for Earth's ellipsoidal shape.
 Works globally.
 Does not require a manually selected reference latitude.
 Recommended for final or defensible distance results.
-6. Local Cartesian approximation
+
+### Local Cartesian approximation
 The local method treats each short segment as movement on a flat x-y plane. The program calculates latitude and longitude differences:
 
 delta_latitude = latitude_2 - latitude_1
