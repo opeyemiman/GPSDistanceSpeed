@@ -33,6 +33,7 @@ A latitude column in decimal degrees; A longitude column in decimal degrees; A n
 Example:
 
 time,lat,lon
+
 0,40.0000,-105.0000
 1,40.0005,-105.0003
 2,40.0011,-105.0007
@@ -47,7 +48,7 @@ Longitude indicates east-west angular position. Valid decimal longitude values r
 
 Latitude and longitude are angular coordinates, not direct linear distances. One degree of longitude represents less ground distance as a location approaches either pole.
 
-### WGS84 ellipsoidal geodesic
+#### WGS84 ellipsoidal geodesic
 WGS84 means World Geodetic System 1984. WGS84 is the reference coordinate system commonly used by GPS. WGS84 approximates Earth as a flattened ellipsoid. 
 Earth is slightly wider around the equator than the distance between the geographic poles. A geodesic is the shortest surface path between two coordinates on the selected Earth model.
 
@@ -60,7 +61,7 @@ The function returns forward direction, reverse direction, and ellipsoidal surfa
 
 WGS84 geodesic is not a map projection. A map projection transforms curved Earth coordinates into flat map coordinates. This option calculates distance directly on the WGS84 ellipsoid.
 
-#### Benefits:
+##### Benefits:
 
 Appropriate for short and long segments.
 
@@ -72,7 +73,7 @@ Does not require a manually selected reference latitude.
 
 Recommended for final or defensible distance results.
 
-### Local Cartesian approximation
+#### Local Cartesian approximation
 The local method treats each short segment as movement on a flat x-y plane. The program calculates latitude and longitude differences:
 
 delta_latitude = latitude_2 - latitude_1
@@ -94,16 +95,24 @@ This is the Pythagorean theorem applied to a short local segment. This method is
 Benefits:
 
 Simple calculation.
+
 Computationally inexpensive.
+
 Easy to interpret as local x-y movement.
+
 Highly effective for closely spaced vehicle observations.
+
 Limitations:
 
 It is an approximation.
+
 Error increases as individual segments become longer.
+
 It should not be treated as one global flat coordinate system.
 Special care is required near the geographic poles.
-7. Which method should be selected?
+7. 
+
+### Which method should be selected?
 Select WGS84 ellipsoidal geodesic when global validity, accuracy, consistency, or defensibility is most important. WGS84 is the default and generally recommended option.
 
 Select Local Cartesian approximation for closely spaced vehicle GPS observations when a transparent local planar calculation is desired.
