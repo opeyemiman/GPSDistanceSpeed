@@ -18,10 +18,10 @@ For each pair of consecutive points, the calculator determines distance, elapsed
 ### CSV inputs
 The calculator supports three input workflows:
 
-Upload CSV: Select a CSV file from the computer. The entire file is copied into the editable text area.
+Upload CSV: Select a CSV file from the computer. The entire file is copied into the editable text area.\n
 Paste manually: Paste CSV text directly into the text area.
 Load example: Load the built-in example CSV.
-Because uploaded data is copied into the text area, the data can be reviewed or edited before processing.
+
 
 ### CSV columns
 The CSV must include at least:
