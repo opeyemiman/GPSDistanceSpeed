@@ -19,7 +19,9 @@ For each pair of consecutive points, the calculator determines distance, elapsed
 The calculator supports three input workflows:
 
 Upload CSV: Select a CSV file from the computer. The entire file is copied into the editable text area.\n
+
 Paste manually: Paste CSV text directly into the text area.
+
 Load example: Load the built-in example CSV.
 
 
@@ -46,11 +48,8 @@ Longitude indicates east-west angular position. Valid decimal longitude values r
 Latitude and longitude are angular coordinates, not direct linear distances. One degree of longitude represents less ground distance as a location approaches either pole.
 
 ### WGS84 ellipsoidal geodesic
-WGS84 means World Geodetic System 1984. WGS84 is the reference coordinate system commonly used by GPS.
-
-WGS84 approximates Earth as a flattened ellipsoid. Earth is slightly wider around the equator than the distance between the geographic poles.
-
-A geodesic is the shortest surface path between two coordinates on the selected Earth model.
+WGS84 means World Geodetic System 1984. WGS84 is the reference coordinate system commonly used by GPS. WGS84 approximates Earth as a flattened ellipsoid. 
+Earth is slightly wider around the equator than the distance between the geographic poles. A geodesic is the shortest surface path between two coordinates on the selected Earth model.
 
 The program calls:
 
@@ -61,12 +60,16 @@ The function returns forward direction, reverse direction, and ellipsoidal surfa
 
 WGS84 geodesic is not a map projection. A map projection transforms curved Earth coordinates into flat map coordinates. This option calculates distance directly on the WGS84 ellipsoid.
 
-Benefits:
+#### Benefits:
 
 Appropriate for short and long segments.
+
 Accounts for Earth's ellipsoidal shape.
+
 Works globally.
+
 Does not require a manually selected reference latitude.
+
 Recommended for final or defensible distance results.
 
 ### Local Cartesian approximation
@@ -86,9 +89,7 @@ The distance is calculated with:
 
 distance = sqrt(dx^2 + dy^2)
     
-This is the Pythagorean theorem applied to a short local segment.
-
-This method is a local Cartesian approximation. It is not a complete formal Orthographic map projection. A formal Orthographic projection requires a projection center and specific spherical or ellipsoidal projection equations.
+This is the Pythagorean theorem applied to a short local segment. This method is a local Cartesian approximation. It is not a complete formal Orthographic map projection. A formal Orthographic projection requires a projection center and specific spherical or ellipsoidal projection equations.
 
 Benefits:
 
